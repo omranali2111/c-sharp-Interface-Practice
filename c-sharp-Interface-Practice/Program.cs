@@ -1,4 +1,5 @@
 ﻿using c_sharp_Interface_Practice;
+using Microsoft.VisualBasic;
 
 internal class Program
 {
@@ -28,6 +29,73 @@ internal class Program
 
         else Console.WriteLine("you have enterd invalid input");
 
+
+        Console.WriteLine("--------------------------------------------------");
+       // Console.WriteLine("enter your balance in SavingsAccount : ");
+       // int blnc1=int.Parse(Console.ReadLine());
+        //Console.WriteLine("enter your balance in CheckingAccount : ");
+        //int blnc2 = int.Parse(Console.ReadLine());
+        IBankAccount[] bankAccount = { new SavingsAccount(), new CheckingAccount() };
+        string str3;
+        do
+        {
+            
+            Console.WriteLine("choos the operation you want to do(deposit or withdraw)");
+            string str1 = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("choos the account (Savings or Checking)");
+            string str2 = Convert.ToString(Console.ReadLine());
+            double deposit, withdraw;
+            
+            switch (str1)
+            {
+                case "deposit":
+
+                    Console.WriteLine("enter amount to deposit");
+                    deposit = int.Parse(Console.ReadLine());
+                    if (str2 == "Saving")
+                    {
+
+                        bankAccount[0].Deposit(deposit);
+                    }
+                    else if (str2 == "Checking")
+                    {
+
+                        bankAccount[1].Deposit(deposit);
+                    }
+                    else
+                        Console.WriteLine("you have entered invalid input");
+
+
+                    break;
+                case "withdraw":
+
+                    Console.WriteLine("enter amount to withdraw");
+                    withdraw = int.Parse(Console.ReadLine());
+                    if (str2 == "Saving")
+                    {
+
+                        bankAccount[0].Withdraw(withdraw);
+                    }
+                    else if (str2 == "Checking")
+                    {
+
+                        bankAccount[1].Withdraw(withdraw);
+                    }
+                    else
+                        Console.WriteLine("you have entered invalid input");
+
+                    break;
+
+                default:
+                    Console.WriteLine("you have entered invalid input");
+                    break;
+            }
+            Console.WriteLine($" you have {bankAccount[0].GetBalance()} balance in SavingAccount and {bankAccount[1].GetBalance()} in CheckingAccount ");
+            Console.WriteLine("do you want to do another operation?(yes or no)");
+             str3 = Convert.ToString(Console.ReadLine());
+
+        } while (str3 =="yes");
+       
     }
 
     
