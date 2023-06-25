@@ -1,5 +1,6 @@
 ﻿using c_sharp_Interface_Practice;
 using Microsoft.VisualBasic;
+using System;
 using System.Text;
 
 internal class Program
@@ -148,6 +149,12 @@ internal class Program
         sb.AppendLine("omran");
         Console.WriteLine(get1.GetHashCode());
         Console.WriteLine(sb.ToString());
+
+        Immutable person = new Immutable("omran", 27);//Once the object is created, the property values cannot be changed.
+
+
+        Console.WriteLine($"Name: {person.Name}");
+        Console.WriteLine($"Age: {person.Age}");
 
     }
 
