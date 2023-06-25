@@ -1,5 +1,6 @@
 ﻿using c_sharp_Interface_Practice;
 using Microsoft.VisualBasic;
+using System.Text;
 
 internal class Program
 {
@@ -139,6 +140,14 @@ internal class Program
 
         Console.WriteLine(get.Equals(get1));//in this case Equals function is comparing the HashCode so we need to override the equals function
 
+        StringBuilder sb= new StringBuilder();// this used to prevent adding new object each time we add new string 
+        sb.AppendLine("hi");
+        Console.WriteLine(get1.GetHashCode());// same HashCode everytime
+        sb.AppendLine("i am");
+        Console.WriteLine(get1.GetHashCode());
+        sb.AppendLine("omran");
+        Console.WriteLine(get1.GetHashCode());
+        Console.WriteLine(sb.ToString());
 
     }
 
