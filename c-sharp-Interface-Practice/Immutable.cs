@@ -8,8 +8,8 @@ namespace c_sharp_Interface_Practice
 {
     public sealed class Immutable//prevent inheritance or direct instantiation of derived classes
     {
-        public string Name { get; }// prevents modifications to the properties after object creation.
-        public int Age { get; }
+         readonly string Name;//  prevents modifications to the properties after object creation.
+        readonly int Age;
 
         public Immutable(string name, int age)//Initialize all the properties  through the constructor only
         {
