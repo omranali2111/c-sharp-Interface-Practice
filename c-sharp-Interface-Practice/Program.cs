@@ -5,6 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        /*
         Console.WriteLine("what kind of vehicle you want to use:");
         string type = Convert.ToString(Console.ReadLine());
         Console.WriteLine("what is the speed you want to reach");
@@ -31,10 +32,6 @@ internal class Program
 
 
         Console.WriteLine("--------------------------------------------------");
-       // Console.WriteLine("enter your balance in SavingsAccount : ");
-       // int blnc1=int.Parse(Console.ReadLine());
-        //Console.WriteLine("enter your balance in CheckingAccount : ");
-        //int blnc2 = int.Parse(Console.ReadLine());
         IBankAccount[] bankAccount = { new SavingsAccount(), new CheckingAccount() };
         string str3;
         do
@@ -95,7 +92,17 @@ internal class Program
              str3 = Convert.ToString(Console.ReadLine());
 
         } while (str3 =="yes");
-       
+        */
+
+        Console.WriteLine("--------------------------------------------------");
+        IPlayable music = new MusicPlayer();
+        IPlayable video=new VideoPlayer();
+
+        music.Play();
+        video.Play();
+        music.Stop();
+        video.Pause();
+
     }
 
     
