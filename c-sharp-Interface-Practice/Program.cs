@@ -111,6 +111,22 @@ internal class Program
         file.LogInfo("login success");
         Database.LogError("login failed");
 
+        Console.WriteLine("--------------------------------------------------");
+
+        IEmployee full = new FullTimeEmployee();
+        IEmployee part = new PartTimeEmployee();
+
+        Console.WriteLine("Full Time Employee Info: ");
+        Console.WriteLine(full.Name="ali");
+        Console.WriteLine(full.Salary = 2100);
+        Console.WriteLine(full.JobTitle = "Dev");
+        Console.WriteLine("*********************");
+
+        Console.WriteLine("Part Time Employee Info: ");
+        Console.WriteLine(full.Name = "ahmed");
+        Console.WriteLine(full.Salary = 1500);
+        Console.WriteLine(full.JobTitle = "salesman");
+
     }
 
     
