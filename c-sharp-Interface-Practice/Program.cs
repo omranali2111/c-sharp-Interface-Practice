@@ -103,6 +103,14 @@ internal class Program
         music.Stop();
         video.Pause();
 
+        Console.WriteLine("--------------------------------------------------");
+
+        ILogger file = new FileLogger();
+        ILogger Database= new DatabaseLogger();
+
+        file.LogInfo("login success");
+        Database.LogError("login failed");
+
     }
 
     
