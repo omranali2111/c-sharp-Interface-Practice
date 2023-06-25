@@ -127,6 +127,19 @@ internal class Program
         Console.WriteLine(full.Salary = 1500);
         Console.WriteLine(full.JobTitle = "salesman");
 
+        Console.WriteLine("--------------------------------------------------");
+        GetHash get= new GetHash();
+        get.age = 28;
+        get.Name = "omar";
+        Console.WriteLine(get.GetHashCode());
+        GetHash get1 = new GetHash();
+        Console.WriteLine(get1.GetHashCode());
+        get1.age = 28;
+        get1.Name = "omar";
+
+        Console.WriteLine(get.Equals(get1));//in this case Equals function is comparing the HashCode so we need to override the equals function
+
+
     }
 
     
